@@ -9,5 +9,5 @@ public class Department extends OrganizationComponent{
     protected void print() {
         System.out.println("--------------------"+getName()+"-------------------------");
 
-    }
+     }
 }
