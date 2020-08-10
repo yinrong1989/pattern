@@ -6,4 +6,9 @@ public class Teacher implements ITeacher{
     public void teach() {
         System.out.println("老师在上课");
     }
+
+    @Override
+    public void sayHello() {
+        System.out.println("老师在sayHello");
+    }
 }

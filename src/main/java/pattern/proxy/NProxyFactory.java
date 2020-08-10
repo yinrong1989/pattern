@@ -6,18 +6,20 @@ import java.lang.reflect.Proxy;
 
 public class NProxyFactory<T> {
 
-    private  T object;
+    private T target;
 
     public NProxyFactory(T object) {
-        this.object = object;
+        this.target = object;
     }
+
     public T getProxyInstance() {
-        return (T)Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(), new InvocationHandler() {
+        return (T) Proxy.newProxyInstance(target.getClass().getClassLoader(),
+                target.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                System.out.println("JDK动态代理开始");
-                Object returnValue =method.invoke(object,args);
-                System.out.println("JDK动态代理结束");
+                System.out.println("JDK动态代理开始1");
+                Object returnValue = method.invoke(target, args);
+                System.out.println("JDK动态代理结束1");
                 return returnValue;
             }
         });

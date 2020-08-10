@@ -1,6 +1,6 @@
 package pattern.proxy;
 
-public class JDKDynamicClient {
+public class CGlibDynamicClient {
     public static void main(String[] args) {
         ITeacher teacher = new Teacher();
         ITeacher proxyTeacher = (ITeacher) new ProxyFactory(teacher).getProxyInstance();

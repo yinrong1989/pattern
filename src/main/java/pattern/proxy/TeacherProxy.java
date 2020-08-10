@@ -18,4 +18,11 @@ public class TeacherProxy implements ITeacher {
 
 
     }
+
+    @Override
+    public void sayHello() {
+        System.out.println("proxy前");
+        teacher.sayHello();
+        System.out.println("proxy后");
+    }
 }
