@@ -18,7 +18,7 @@ public class ProxyFactory {
                 target.getClass().getInterfaces(), new InvocationHandler() {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-// TODO Auto-generated method stub
+                    // TODO Auto-generated method stub
                         System.out.println("JDK 代理开始~~"); //反射机制调用目标对象的方法
                         Object returnVal = method.invoke(target, args);
                         System.out.println("JDK 代理提交");
